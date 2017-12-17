@@ -1,0 +1,26 @@
+﻿@using WebAplikacija.Models
+@model WebAplikacija.Models.IndexViewModel
+@{
+    Layout = "~/Pages/_Layout.cshtml";
+ }
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Todo</h1>
+    <a asp-controller="Todo" asp-action="Add" >Add new todo</a>
+    <a asp-controller="Todo" asp-action="Completed" >See completed todos</a>
+    <br />
+    @foreach (var item in Model)
+    {
+        <div>
+            @item.Text<br />
+            @item.DateCreated<br />
+            <a asp-controller="Todo" asp-action="Mark" asp-route-id="@item.Id">Mark as completed</a>
+        </div>
+        <br />
+    }
+
+</body>
+</html>

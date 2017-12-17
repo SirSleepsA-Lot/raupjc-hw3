@@ -1,0 +1,21 @@
+﻿@using WebAplikacija.Models
+@model WebAplikacija.Models.CompletedViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>completed</title>
+</head>
+<body>
+    <h1>Completed Todo</h1>
+    @foreach (var item in Model)
+    {
+        <div>
+            @item.Text<br />
+            @item.DateCompleted<br />
+            <a asp-controller="Todo" asp-action="Remove" asp-route-id="@item.Id">Remove from completed</a>
+        </div>
+        <br />
+    }
+    <a asp-action="Index">Home page</a>
+</body>
+</html>

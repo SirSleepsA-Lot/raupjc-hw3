@@ -1,0 +1,18 @@
+﻿@using WebAplikacija.Models
+@model WebAplikacija.Models.AddViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>add</title>
+</head>
+<body>
+    <div>
+        <form asp-action="Add" method="post">
+            Text: <input asp-for="Text" /><span asp-validation-for="Text"></span><br />
+            Date Due: <input asp-for="DateDue" /><span asp-validation-for="DateDue"></span><br />
+            <input type="submit" />
+        </form>
+        <a asp-action="Index">Home page</a>
+    </div>
+</body>
+</html>
